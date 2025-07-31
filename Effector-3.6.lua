@@ -211,13 +211,13 @@
 		if line.i == 1 then	--Autosave
 			local file_maxn = 512
 			local file_nmfx = format( "AutoSave_KE_%s", (count_save - 1) % file_maxn + 1 )
-			local file_name = format( "%sautosave\\Effector AutoSave %s.lua", aegisub.decode_path( "?user/" ), (count_save - 1) % file_maxn + 1 )
+			local file_name = format( "%s\\autosave\\Effector AutoSave %s.lua", aegisub.decode_path( "?user/" ), (count_save - 1) % file_maxn + 1 )
 			local file_save, infile_fx
 			file_save = io.open( file_name, "w" )
 			if file_save == nil then --> autosave folder nil
 				error(
 					format( "\n\n\n[::error -> autosave folder nil::]\nLa carpeta autosave no existe. Debes crear una carpeta con el nombre <<autosave>> en la dirección %s para que el Kara Effector se pueda ejecutar de forma correcta.\n\nLa siguiente carpeta debe existir:\n%s\\autosave\n\n\n",
-						aegisub.decode_path( "?data" ), aegisub.decode_path( "?data" )
+						aegisub.decode_path( "?user" ), aegisub.decode_path( "?user" )
 					), 2
 				)
 			end
